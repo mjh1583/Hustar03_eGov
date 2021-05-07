@@ -71,9 +71,6 @@
 					if(before == "+" || before == "-" || before == "*" || before == "/") {
 						alert("연산자는 연속으로 입력할 수 없습니다.");
 					}
-					else if(nums.length == 0) {
-						alert("처음에 연산자를 입력할 수 없습니다.");
-					}
 					else {
 						show(input);
 					}
