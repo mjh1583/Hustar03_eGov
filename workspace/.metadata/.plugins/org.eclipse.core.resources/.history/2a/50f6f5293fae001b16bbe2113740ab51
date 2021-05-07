@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery 이벤트</title>
+</head>
+<body>
+	<div style="width: 100px; height: 100px;" id="contentsArea">
+		
+	</div>
+	<input type="button" class="btn" value="yellow" w="200px" h="300px"/>
+	<input type="button" class="btn" value="red" w="150px" h="200px"/>
+	<input type="button" class="btn" value="blue" w="500px" h="1000px"/>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$('.btn').bind('click', function() {
+			$('#contentsArea').css('background-color', $(this).val());
+			$('#contentsArea').css('width', $(this).attr('w'));
+			$('#contentsArea').css('height', $(this).attr('h'));
+		});
+	</script>
+</body>
+</html>

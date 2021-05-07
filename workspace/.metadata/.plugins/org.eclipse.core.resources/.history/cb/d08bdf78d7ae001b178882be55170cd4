@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>animation</title>
+</head>
+<body>
+	<div>
+		<input type="text" id="pageX" value="" placeholder="x 좌표"/>
+		<input type="text" id="pageY" value="" placeholder="y 좌표"/>
+	</div>
+	
+	<div style="width: 1000px; height: 800px; border: 1px solid #ccc;" id="contentsArea">
+	
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$('#contentsArea').bind('click', function() {
+			console.log(event);
+			
+			$('#pageX').val(event.pageX);
+			$('#pageY').val(event.pageY);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>animation</title>
+</head>
+<body>
+	<div id="contentsArea">
+		
+	</div>
+	
+	<div>
+		<input type="button" id="btn1" value="1번 페이지">
+		<input type="button" id="btn2" value="2번 페이지">
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$("#btn1").bind("click", function() {
+			$.ajax({
+				url : "./js012_1.jsp",
+				type : "get",		//get, post
+				data : {test : "1", test2 : "2"},
+				dataType : "html",		//html, json, xml
+				beforeSend : function() {
+					//로딩...... show()
+				},
+				success : function(data) {
+					alert(data);
+				},
+				error : function() {
+					
+				},
+				complete : function() {
+					//...... hide()
+				}
+			});
+		});
+		
+	</script>
+</body>
+</html>

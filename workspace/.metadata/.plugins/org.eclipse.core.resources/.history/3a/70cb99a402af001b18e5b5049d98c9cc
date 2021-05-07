@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>날짜, interval</title>
+</head>
+<body>
+	<div id="interval">
+		
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			fn_interval();
+		});
+		
+		var cnt = 0;
+		function fn_interval() {
+			var intver = setInterval(function() {
+				cnt++;
+				if(cnt == 10) {
+					clearInterval(intver);
+				}
+				$("#interval").append("안녕하세요!");
+			}, 1000);
+		}
+	</script>
+</body>
+</html>

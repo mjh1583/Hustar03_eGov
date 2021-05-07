@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>경고문, 페이지 이동</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function fn_message(msg) {
+			alert(msg);
+		}
+		
+		fn_message("안녕하세요.");
+	</script>
+</body>
+</html>

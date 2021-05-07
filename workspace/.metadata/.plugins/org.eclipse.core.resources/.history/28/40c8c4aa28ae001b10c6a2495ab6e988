@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제어문(if, for, while, switch case, do while)</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function fn_sample1(money) {
+			if(money > 5000) {
+				alert('엄청 부자시네요.');
+			}
+			else if(money > 3000) {
+				alert('조금 부자시네요.');
+			}
+			else {
+				alert('음...');
+			}
+		}
+		
+		fn_sample1(5000);
+	</script>
+</body>
+</html>
