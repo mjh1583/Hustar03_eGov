@@ -248,6 +248,12 @@
             <version>2.7.3</version>
         </dependency>
         
+        <!-- 비밀번호 암호화 -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.3m</version>
+        </dependency>
 	</dependencies>
 
 	<build>

@@ -21,7 +21,7 @@
 				</li>
 				<li>
 					<label for="">비밀번호 확인</label>
-					<input type="password" placeholder="비밀번호 확인">
+					<input type="password" name="password_check" placeholder="비밀번호 확인">
 				</li>
 				<li>
 					<label for="">이름</label>
@@ -33,7 +33,7 @@
 				</li>
 				<li>
 					<label for="">생년월일</label>
-					<input type="text" name="birth" placeholder="생년월일 ex)19950806">
+					<input type="text" name="birth" maxlength="8" placeholder="생년월일 ex)19950806">
 				</li>
 				<li class="gender">
 					<label for="">성별</label>
@@ -49,6 +49,7 @@
 				<li>
 					<label for="">직업</label>
 					<select name="job" id="">
+						<option value="">직업을 선택해주세요.</option>
 						<option value="학생">학생</option>
 						<option value="회사원">회사원</option>
 						<option value="기타">기타</option>
@@ -71,7 +72,7 @@
 		
 		<div class="join-btn">
 			<a href="<c:url value='/member/login.do' />">이전</a>
-			<a href="#none" onclick="document.frm.submit();" >가입완료</a>
+			<a href="#none" onclick="submitForm();" >가입완료</a>
 		</div>
 	</form>
 </div>
@@ -110,6 +111,44 @@
 				console.log(textStatus);
 			}
 		});
+	}
+	
+	function submitForm() {
+		if(document.frm.id.value == "") {
+			alert("ID를 입력해주세요.");
+			document.frm.id.focus();
+		}
+		else if(document.frm.password.value == "") {
+			alert("비밀번호를 입력해주세요.");
+			document.frm.password.focus();
+		}
+		else if(document.frm.password.value != document.frm.password_check.value) {
+			alert("입력한 비밀번호와 다릅니다.");
+			document.frm.password_check.focus();
+		}
+		else if(document.frm.name.value == "") {
+			alert("이름을 입력해주세요.");
+			document.frm.name.focus();
+		}
+		else if(document.frm.phone.value == "") {
+			alert("전화번호를 입력해주세요.");
+			document.frm.phone.focus();
+		}
+		else if(document.frm.birth.value == "") {
+			alert("생년월일을 입력해주세요.");
+			document.frm.birth.focus();
+		}
+		else if(document.frm.gender.value == "") {
+			alert("성별을 선택해주세요.");
+			document.frm.gender.focus();
+		}
+		else if(document.frm.job.value == "") {
+			alert("직업을 선택해주세요.");
+			document.job.name.focus();
+		}
+		else {
+			document.frm.submit();
+		}
 	}
 </script>
 <!-- 하단 푸터 불러오기 -->

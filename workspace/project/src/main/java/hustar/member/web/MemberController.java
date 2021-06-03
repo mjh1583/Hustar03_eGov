@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -35,7 +36,15 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/member/login.do")
-	public String login() throws Exception {
+	public String login(HttpServletRequest request,
+			Model model) throws Exception {
+		
+		Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request); //메세지를 받아옴
+		
+		if(inputFlashMap != null) { // 메세지가 있으면 해당 뷰에 뿌려줌
+			model.addAttribute("msg", inputFlashMap.get("msg"));
+			System.out.println("msg = " + inputFlashMap.get("msg"));
+		}
 		return "/member/login";
 	}
 	
@@ -43,6 +52,13 @@ public class MemberController {
 	@RequestMapping(value = "/member/join.do")
 	public String join(HttpServletRequest request, 
 			Model model) throws Exception {
+		
+		/*
+		 * String pass = "1234"; // 평문(비밀번호 원본) 암호화 String encPass = BCrypt.hashpw(pass,
+		 * BCrypt.gensalt()); System.out.println("encPass = " + encPass); boolean
+		 * success = BCrypt.checkpw(pass, encPass); System.out.println("success = " +
+		 * success);
+		 */
 		
 		Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request); //메세지를 받아옴
 		
@@ -77,12 +93,15 @@ public class MemberController {
 			redirectAttributes.addFlashAttribute("msg", "사용 중인 아이디입니다.");
 		}
 		else {
+			// 입력한 비밀번호를 암호화(해시함수)하고 저장
+			String encPass = BCrypt.hashpw(memberVO.getPassword(), BCrypt.gensalt());
+			memberVO.setPassword(encPass);
+			
 			// 회원가입 정보 DB에 추가
 			commonService.insert(memberVO, null, null, "memberDAO.insertMember");
 			  
 			redirectAttributes.addFlashAttribute("msg", "회원가입에 성공하였습니다.");
 		}
-		  
 		/*
 		 * forward vs redirect
 		 * forward : 서버 내에서 바로 join.do를 요청함
@@ -106,5 +125,28 @@ public class MemberController {
 		}
 		
 		return new ModelAndView(jsonView);
+	}
+	
+	// 로그인 버튼을 눌렀을때
+	@RequestMapping(value = "/member/actionLogin.do")
+	public String actionLogin(@ModelAttribute("memberVO") MemberVO memberVO,
+			RedirectAttributes redirectAttributes) throws Exception {
+		
+		MemberVO loginVO = (MemberVO) commonService.selectView(memberVO, null, null, "memberDAO.selectMemberView");
+		
+		if(loginVO != null) {
+			if(BCrypt.checkpw(memberVO.getPassword(), loginVO.getPassword())) {
+				return "redirect:/index.do";
+			}
+			else { // 비밀번호 불일치
+				redirectAttributes.addFlashAttribute("msg", "비밀번호가 틀렸습니다.");
+			}
+		} 
+		else {
+			// ID가 존재하지 않음
+			redirectAttributes.addFlashAttribute("msg", "존재하지 않는 아이디입니다.");
+		}
+		
+		return "redirect:/member/login.do";
 	}
 }
