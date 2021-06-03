@@ -1,0 +1,118 @@
+.header .gnb {width: 100%; clear: both;}
+.header .gnb > ul > li {margin: 0; width: 20%;}
+.header .gnb > ul > li > a {padding: 5px; font-size: 15px; text-align: center;}
+
+.header .tnb > ul > li > a {padding: 5px; font-size: 12px;}
+
+.header .header-box {padding: 0;}
+.header h1 a {padding: 5px;}
+.header h1 a img {max-width: 130px; max-height: 50px;}
+
+.main-visual h2 {font-size: 28px; padding-top: 70px; padding-bottom: 10px;}
+.main-visual p {font-size: 14px; color: #fff; padding: 5px;}
+.main-visual {height: 300px;}
+
+.numbers-wrap .numbers {padding: 10px; margin-top: 25px;}
+.numbers-wrap .numbers h2 {font-size: 24px; margin-bottom: 10px;}
+.numbers-wrap .numbers p {font-size: 14px;}
+
+.numbers-wrap .numbers .num-data ul li {padding: 0 5px; width: 40%;}
+.numbers-wrap .numbers .num-data ul li span {font-size: 14px;}
+.numbers-wrap .numbers .num-data ul li p {font-size: 18px; margin-bottom: 2px; margin-top: 10px;}
+.numbers-wrap .numbers .num-data ul li img {max-width: 100px; height: 100px;}
+
+.slide-banner {padding: 10px;}
+.slide-banner .swiper-container img {height: 140px;}
+.slide-banner h2 {padding: 5px; font-size: 20px;}
+
+.main-gallery-wrap {padding: 15px;}
+.main-gallery-wrap h2 {font-size: 24px; padding: 0px;}
+
+.main-gallery {width: 100%; margin: 0px;}
+.main-gallery li {width: 50%; padding: 5px;}
+.main-gallery li > div .thum img {height: 140px;}
+.main-gallery li > div .info h3 {padding: 2px;}
+.main-gallery li > div .info p {margin: 0; font-size: 10px; padding-bottom: 5px;}
+.main-gallery li > div .info span {width: 18px; height: 18px; line-height: 14px;}
+
+.footer {padding: 5px;}
+.footer > div {padding: 0px;}
+.footer > div > div.f-logo {padding: 0; margin: 0;}
+.footer > div > div.f-copy {padding: 0; margin: 0; font-size: 12px; padding-top: 20px; margin-left: 13px;}
+
+.section00-box h2 {font-size: 36px;}
+.section00-box p {font-size: 16px;}
+.section00-box p b {font-size: 24px;}
+
+.section01-box h2 {font-size: 36px;}
+.section01-box p {font-size: 16px;}
+
+.section02-box h2 {font-size: 36px;}
+.section02-box p {font-size: 16px;}
+
+.section03-box h2 {font-size: 36px;}
+.section03-box p {font-size: 16px;}
+
+.snb-wrap li > a {padding: 10px;}
+
+.notice-wrap {margin: 10px;}
+.notice-box ul li div {padding: 2px; font-size: 12px;}
+
+.write-btn-box a {padding: 5px;}
+.paging div ul li {padding: 0;}
+
+.search-box div button {padding: 5px; border: 2px solid #8bcaff;}
+.search-box div input {font-size: 12px; padding: 3px 5px;}
+
+.free-wrap {margin: 10px;}
+.free-box ul li div {padding: 2px; font-size: 12px;}
+
+.gallery-box ul li {width: 50%; padding: 5px;}
+.gallery-box ul li:nth-child(3n+1) {clear: unset;}
+.gallery-box ul li:nth-child(2n+1) {clear: both;}
+
+.view h2 {font-size: 24px; padding: 2px;}
+.view .view-hd {margin-right: 10px;}
+.view .view-content {padding: 5px; min-height: 190px; margin: 5px;}
+
+.view .view-file { margin: 10px;}
+
+.login-box {max-width: 340px;}
+.login-box h1 {font-size: 24px;}
+.login {padding: 10px;}
+
+.join-box h1 {font-size: 24px;}
+
+.booking h2 {font-size: 24px;}
+.booking-wrap ul li .booking-box > div.thum {width: 100%;}
+.booking-wrap ul li .booking-box > div.info {width: 100%;}
+.booking-wrap ul li .booking-box > div.info h3 {font-size: 20px;}
+.booking-wrap ul li .booking-box > div.info p {font-size: 13px; margin-top: 5px;}
+.booking-wrap ul li .booking-box > div.info span {font-size: 10px; margin-top: 5px;}
+
+.booking-box h2 {font-size: 24px; margin: 10px;}
+
+.view-photo {padding: 5px 0; margin: 10px 0;}
+.view-photo img {max-height: 150px;}
+
+.calendar-box {font-size: 13px; padding: 0; margin: 10px; margin-bottom: 20px;}
+
+.detail {border: 0; margin: 0;}
+.detail .text {margin: 10px; border: 1px solid #ccc;}
+
+.mypage-wrap h2 {font-size: 24px;}
+.mypage-box {font-size: 12px; margin: 10px;}
+.mypage-box ul li {padding: 2px;}
+
+.mypage-box ul li div.no {width: 7%;}
+.mypage-box ul li div.subject {width: 38%;}
+.mypage-box ul li div.state {width: 14%;}
+.mypage-box ul li div.date {width: 18%;}
+.mypage-box ul li div.name {width: 18%;}
+
+/* auto-fix 덜렁거림 해결 */
+.header {position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;}
+
+#section1 {background-position: center 90px;}
+/* #section2 {background-position: center 90px;} */
+/* #section3 {background-position: center 90px;} */

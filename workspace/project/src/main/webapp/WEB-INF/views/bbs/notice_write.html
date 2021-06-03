@@ -1,0 +1,52 @@
+<!-- 상단 헤더 불러오기 -->
+<?php include('../subheader.php'); ?>
+<div class="snb-wrap">
+	<div>
+		<ul>
+			<li class="on"><a href="./notice_list.html"><span>공지사항</span></a></li>
+			<li><a href="./free_list.html"><span>자유게시판</span></a></li>
+			<li><a href="./gallery_list.html"><span>갤러리</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="notice-write-wrap">
+	<div class="notice-write-box">
+		<h1>공지사항 글쓰기</h1>
+			
+		<div class="write-form">
+			<ul>
+				<li>
+					<label for="">제목</label>
+					<input type="text" placeholder="제목을 입력하세요">
+				</li>
+				<li>
+					<label for="">내용</label>
+					<textarea name="" id="" placeholder="내용을 입력하세요"></textarea>
+				</li>
+				<li>
+					<label for="">첨부파일 #01</label>
+					<input type="file">
+				</li>
+				<li>
+					<label for="">첨부파일 #02</label>
+					<input type="file">
+				</li>
+				<li class="check-box">
+					<label for="">공지 선택</label>
+					<div class="checkbox">
+						<input type="checkbox" id="check-notice"> 
+						<label for="check-notice" class="check-text">선택시 공지사항</label>
+					</div>
+				</li>
+			</ul>
+		</div> <!-- write-form -->
+	</div> <!-- notice-write-box -->
+	
+	<div class="write-btn-box">
+		<a href="./notice_list.html">이전</a>
+		<a href="#none">저장</a>
+	</div>
+</div> <!-- notice-write-wrap -->
+<!-- 하단 푸터 불러오기 -->
+<?php include('../subfooter.php'); ?>

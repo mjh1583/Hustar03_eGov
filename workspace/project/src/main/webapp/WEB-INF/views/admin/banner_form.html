@@ -1,0 +1,51 @@
+<?php include('../subheader.php'); ?>
+	<!-- 관리자 메뉴 -->
+	<div class="adm-menu">
+		<ul>
+			<li><a href="./set.html">환경설정</a></li>
+			<li><a href="./board.html">게시판 관리</a></li>
+			<li><a href="./member.html">회원 관리</a></li>
+			<li><a href="./popup.html">팝업 관리</a></li>
+			<li class="on"><a href="./banner.html">배너 관리</a></li>
+			<li><a href="./booking.html">장소 관리</a></li>
+		</ul>
+	</div>
+	
+	<!-- 배너 관리 팝업 생성 박스 -->
+	<div class="create-board">
+		<h1>배너 생성</h1>
+		<div class="write-form">
+			<ul>
+				<li>
+					<label for="">배너 명</label>
+					<input type="text" placeholder="배너 명">
+				</li>
+				<li>
+					<label for="">첨부파일</label>
+					<input type="file">
+				</li>
+				<li class="s-date-input">
+					<label for="">사용기간</label>
+					<input type="text" placeholder="시작일"> ~ <input type="text" placeholder="종료일">
+				</li>
+				<li>
+					<label for="">위치</label>
+					<select name="" id="">
+						<option value="">상단</option>
+						<option value="">하단</option>
+					</select>
+				</li>
+				<li class="check-box">
+					<label for="">사용여부</label>
+					<input type="checkbox" id=""> 
+					<label for="" class="check-text">체크시 사용</label>
+				</li>
+			</ul>
+		</div>
+		<div class="write-btn">
+			<a href="./banner.html">이전</a>
+			<a href="#none">등록</a>
+		</div>
+	</div>
+
+<?php include('../subfooter.php'); ?>

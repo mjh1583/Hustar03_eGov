@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="testDAO"> 
+	<!-- 조회 -->
+	<select id="testDAO.selectTestList" parameterType="testVO" resultType="testVO" flushCache="true">
+		<![CDATA[
+			SELECT * FROM T_TEST ORDER BY TE_ID DESC
+		]]>
+	</select>
+	<!-- //조회 -->
+</mapper>

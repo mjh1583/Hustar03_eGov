@@ -1,0 +1,663 @@
+/* 초기화 */
+@import url{'https://fonts.googleapis.com/earlyaccess/notosanskr.css'}
+
+html {overflow-y:scroll}
+body {margin:0;padding:0;font-size:0.75em; font-family:'Noto Sans KR', 'Nanum Gothic', 'Malgun Gothic', dotum, sans-serif; background:#f5f5f5;}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-size:17px; font-family:'Noto Sans KR', 'NanumSquare','Malgun Gothic', dotum, sans-serif}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+
+ul, dl,dt,dd {margin:0;padding:0;list-style:none}
+legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select, img {vertical-align:middle;font-size:1em}
+input, button {margin:0;padding:0; font-family:'Noto Sans KR', 'Nanum Gothic', 'Malgun Gothic', dotum, sans-serif;font-size:1em}
+input[type="submit"]{cursor:pointer}
+button {cursor:pointer}
+
+textarea, select {font-family:'Noto Sans KR', 'Nanum Gothic', 'Malgun Gothic', dotum, sans-serif;font-size:1em}
+select {margin:0}
+p {margin:0;padding:0;word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a {color:#000;text-decoration:none}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 이미지를 반응형으로 최적화 시키기 위함 */
+img {max-width:100%; height:auto; width: auto\9;}
+
+/* header 스타일 */
+.header {background: #fff; border-bottom: 1px solid #8bcaff;}
+.header {transition: all 0.3s;}
+
+.header.fixed {position: fixed; width: 100%; z-index: 9999;}
+.header .header-box {overflow: hidden; padding: 0 10px;}
+
+.header h1 {float: left;}
+.header h1 a {display: block; padding: 10px;}
+.header h1 a img {max-width: 150px; max-height: 60px;}
+
+/* 메인메뉴 스타일 */
+.header .gnb {width: 480px; margin: 0 auto;}
+.header .gnb > ul {overflow: hidden; margin-top: 16px;}
+.header .gnb > ul > li {float:left; margin: 0 10px;}
+.header .gnb > ul > li > a {display: block; padding: 10px; font-size: 18px; font-weight: 600;}
+.header .gnb > ul > li > a:hover {color: #8bcaff;}
+
+.header .tnb {float: right; margin-top: 18px;}
+.header .tnb > ul > li {float:left;}
+.header .tnb > ul > li > a {display: block; padding: 10px; font-size: 15px; font-weight: 600;}
+.header .tnb > ul > li > a:hover {color: #8bcaff;}
+
+/* 메인화면 스타일 */
+.main-visual {text-align: center; height: 900px; background: url('../img/beluga.jpg'); background-size: cover; background-position: center;}
+/*
+	배경 사진의 위치 (좌우 / 상하)
+	background-position: 10px 10px; 
+	
+	배경 사진 반복
+	background-position: repeat-x; 
+	background-position: repeat-y;
+	background-position: repeat;
+*/
+
+.main-visual h2 {font-size: 40px; padding-top: 300px; padding-bottom: 20px; color: #fff;}
+.main-visual p {font-size: 30px; color: #fff;}
+.main-visual p span {display: block; padding-bottom: 10px;}
+
+/* .test-visual {}
+.test-visual > div {position: relative; overflow: hidden; height: 900px;}
+.test-visual .main-bg-box {position: absolute; filter:blur(5px);}
+.test-visual .main-txt {position: absolute; text-align: center; width: 100%; top: 10%;}
+.test-visual .main-txt h2 {font-size: 40px; padding-top: 300px; padding-bottom: 20px; color: #fff;}
+.test-visual .main-txt p {font-size: 30px; color: #fff;}
+.test-visual .main-txt p span {display: block;} */
+
+/* 메인화면 numbers */
+.numbers-wrap {}
+.numbers-wrap .numbers {text-align: center; padding: 50px; margin-top: 50px;}
+.numbers-wrap .numbers h2 {color: #868d9d; font-size: 40px; margin-bottom: 20px;}
+.numbers-wrap .numbers p {color: #868d9d; font-size: 20px;}
+
+.numbers-wrap .numbers .num-data ul {padding-top: 50px;}
+.numbers-wrap .numbers .num-data ul li {display: inline-block; padding: 0 40px;}
+.numbers-wrap .numbers .num-data ul li p {color: #111; font-size: 32px; border-bottom: 1px solid #ccc; margin-bottom: 10px;}
+.numbers-wrap .numbers .num-data ul li span {color: #888; font-size: 20px;}
+.numbers-wrap .numbers .num-data ul li img {max-width: 200px; height: 200px; border-radius: 50%;}
+
+/* 배너 */
+.slide-banner {text-align:center; padding: 50px; border-bottom: 3px solid #7dabd1;}
+.slide-banner .swiper-container img {height:500px;}
+
+.slide-banner h2 {padding: 50px; font-size: 50px; color: #888;}
+
+/* 메인 갤러리 */
+.main-gallery-wrap {background: #458dc9; padding: 30px; border-bottom: 3px solid #4f789a;}
+.main-gallery-wrap h2 {text-align: center; font-size: 40px; color: #fff; padding: 20px;}
+
+.main-gallery {width: 1200px; margin: 0 auto;}
+
+.main-gallery ul {overflow: hidden;}
+.main-gallery li {float: left; width: 33.3%; padding: 5px;}
+.main-gallery li > div {padding: 5px; border: 1px solid #8bcaff; border-radius: 5px;}
+.main-gallery li > div .info {text-align: center;}
+
+.main-gallery li > div .info h3 {color: #fff; padding: 10px;}
+.main-gallery li > div .info p {color: #eee; margin: 10px 0; font-size: 15px; padding-bottom: 10px;}
+.main-gallery li > div .info span {display: inline-block; width: 30px; height: 30px; border: 1px solid #8bcaff; border-radius: 50%; line-height: 28px; transition : all 0.3s; overflow: hidden;}
+.main-gallery li > div .info span u {display: none;}
+.main-gallery li:hover > div .info span {width: 120px; border-radius: 15px; background:#8bcaff;}
+.main-gallery li:hover > div .info span u {display: inline-block; color: #fff;}
+
+.main-gallery li > div .thum img {height: 300px;}
+
+/* footer 스타일 */
+.footer {padding: 10px; background: #666;}
+.footer > div {padding: 10px; max-width: 1200px; overflow: hidden;}
+.footer > div > div {float: left;}
+.footer > div > div.f-logo {padding: 10px; margin: 20px;}
+.footer > div > div.f-logo h1 a {color: #fff;}
+.footer > div > div.f-logo h1 a img {max-width: 150px; max-height: 60px;}
+.footer > div > div.f-copy {padding: 10px; margin: 20px; color: #fff; font-size: 15px; padding-top: 26px;}
+
+/* main-header 스타일 */
+.index-logo {position:absolute; top: 0px; z-index: 9999;}
+
+.index-logo .header-box {overflow: hidden; padding: 0 10px;}
+
+.index-logo h1 {float: left;}
+.index-logo h1 a {display: block; padding: 10px; color: #fff;}
+.index-logo h1 a img {max-width: 150px; max-height: 60px;}
+
+/* 비디오 */
+.video {position: relative;}
+.video video {width: 100%;}
+
+.txt-box {position: absolute; bottom: 100px; right: 100px;}
+.txt-box a {color: #fff; font-size: 50px;}
+.txt-box a:hover {color: #ccc;}
+
+/* 서브메뉴 스타일 */
+.snb-wrap {text-align: center;}
+.snb-wrap div {max-width: 1200px; margin: 0 auto; background: #fff;}
+.snb-wrap ul {display: table; width: 100%;}
+.snb-wrap li {display: table-cell; width: 33.33%;}
+.snb-wrap li:hover span:before {width: 100%; left: 0;}
+.snb-wrap li:hover span:after {opacity: 1;}
+
+.snb-wrap li.on span:before {width: 100%; left: 0;}
+.snb-wrap li.on span:after {opacity: 1;}
+.snb-wrap li.on a {font-weight: bold;}
+
+.snb-wrap li > a {display: block; padding: 20px; font-size: 16px;}
+.snb-wrap li > a span {display: block; position: relative;}
+.snb-wrap li > a span:before {content: ""; position: absolute; width: 0; height: 3px; background: #000; left: 0; bottom: -10px; transition: all 0.3s;}
+.snb-wrap li > a span:after {content: ""; opacity: 0; width: 0; height: 0; border-top: 0 solid transparent; border-bottom: 5px solid #000; border-left: 5px solid transparent; border-right: 5px solid transparent; left: 50%; transform: translateX(-50%); position: absolute; bottom: -8px;}
+
+/* 공지사항 스타일 */
+.notice-wrap {text-align: center; max-width: 1200px; margin: 0 auto;}
+.notice-wrap .notice-box {max-width: 1200px;}
+
+.notice-box ul {background: #fff;}
+.notice-box ul.th {border-top: 2px solid #000;}
+.notice-box ul li {display: table; width: 100%;}
+
+.notice-box ul li div {display: table-cell; border-bottom: 1px solid #ccc; padding: 10px; font-size: 15px;}
+.notice-box ul li div.no {width: 10%;}
+.notice-box ul li div.title {width: 50%;}
+.notice-box ul li div.title a {width: 50%; font-weight: bold;}
+.notice-box ul li div.title a:hover {font-style: italic;}
+.notice-box ul li div.writer {width: 15%;}
+.notice-box ul li div.date {width: 25%;}
+
+.search-box {overflow: hidden;}
+.search-box div {float: right; padding: 10px;}
+.search-box div input {font-size: 15px; padding: 3px 5px;}
+.search-box div button {padding: 5px 10px; background: #8bcaff; color: #fff; font-weight: bold; border: 3px solid #8bcaff; border-radius: 5px;}
+.search-box div button:hover {background: #3078b5; border: 3px solid #3078b5; }
+
+.paging div ul {padding: 10px;}
+.paging div ul li {display: inline-block; padding: 2px 10px; background: #fff; border-radius: 2px; font-weight: bold; border: 1px solid #000;}
+.paging div ul li.on {background: #ffe9c8; font-size: 13px;}
+.paging div ul li:hover {background: #ffe9c8;}
+.paging div ul li a {padding: 10px;}
+
+
+.write-btn-box {padding: 10px; overflow: hidden;}
+.write-btn-box a {float: right; padding: 10px; background: #8bcaff; color: #fff; border-radius: 5px; font-weight: bold; margin: 5px;}
+.write-btn-box a:hover {background: #3078b5;}
+
+/* 공지사항 뷰 스타일 */
+.notice-view-wrap {max-width: 1200px; margin: 0 auto;}
+
+.view h2 {text-align: center; font-size: 32px; padding: 20px;}
+.view .view-hd {text-align: center; overflow: hidden; padding-bottom: 10px;}
+.view .view-hd span {float: right;}
+.view .view-hd p {float: right; margin-right: 20px;}
+.view .view-content {background: #fff; padding: 20px; border: 1px solid #ccc; min-height: 500px;}
+.view .view-file {background: #fff; margin: 10px 0;}
+.view .view-file a {display: block; padding: 5px; border-bottom: 1px dashed #ccc;}
+.view .view-file a:last-child {border-bottom: 0;}
+
+/* 공지사항 글쓰기 스타일 */
+.notice-write-wrap {max-width: 1200px; margin: 0 auto;}
+.notice-write-wrap .notice-write-box {padding: 20px;}
+.notice-write-wrap .notice-write-box h1 {text-align: center; font-size: 32px; margin-bottom: 30px;}
+
+.notice-write-wrap .notice-write-box .write-form {border: 1px solid #ccc; background: #fff;}
+.notice-write-wrap .notice-write-box .write-form ul {padding: 10px;}
+.notice-write-wrap .notice-write-box .write-form ul li {padding: 10px;}
+.notice-write-wrap .notice-write-box .write-form ul li > label {display: block; font-size: 15px; margin-bottom: 10px;}
+.notice-write-wrap .notice-write-box .write-form ul li > div > label {font-size: 15px;}
+.notice-write-wrap .notice-write-box .write-form ul li > div > input {padding: 5px;}
+.notice-write-wrap .notice-write-box .write-form ul li > input {font-size: 15px; padding: 5px; width: 100%;}
+.notice-write-wrap .notice-write-box .write-form ul li textarea {font-size: 12px; width: 100%; height: 400px; padding: 5px;}
+
+/* 체크박스 모양을 조절하는 스타일 */
+.checkbox input[type=checkbox] {  
+    display: none;  
+}
+
+.checkbox input[type=checkbox] + label{
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    padding-left:20px;  
+    font-size: 12px;
+	color:#444;
+}
+.checkbox input[type=checkbox]+ label:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "";  
+    display: inline-block;  
+    width: 16px;  
+    height: 16px;
+	padding:1px;
+    position: absolute;  
+    left: 0;  
+    top:0px;
+    background-color: #fff;  
+	border:1px solid #000;
+    border-radius: 2px; 
+}
+
+.checkbox input[type=checkbox]:checked + label:before { 
+    content:"\f00c";  /* 체크모양 */
+    font-size: 13px; 
+    font-weight:600; 
+    color: #222;  
+    background:#fff;
+	border:1px solid #000;
+    text-align: center;  
+}
+
+/* 갤러리 스타일 */
+.gallery-wrap {text-align: center; max-width: 1200px; margin: 0 auto;}
+.gallery-wrap .notice-box {max-width: 1200px;}
+
+.gallery-box {margin: 10px auto;}
+.gallery-box ul {overflow: hidden;}
+.gallery-box ul li {width: 33.3%; float: left; padding: 10px;}
+.gallery-box ul li:nth-child(3n+1) {clear: both;}
+.gallery-box ul li > div {border: 1px solid #ccc; background: #fff;}
+
+.gallery-box ul li div .thum {text-align: center; padding: 10px;}
+.gallery-box ul li div .thum a img {max-height: 300px;}
+
+.gallery-box ul li div .info {padding: 10px; text-align: left;}
+.gallery-box ul li div .info h3 {padding: 5px 0;}
+.gallery-box ul li div .info p {padding-bottom: 5px; font-size: 13px; color: #666; max-height: 150px; overflow: hidden;}
+.gallery-box ul li div .info span {color: #888;}
+
+/* 갤러리 뷰 스타일 */
+.gallery-view-wrap {max-width: 1200px; margin: 0 auto;}
+
+/* 갤러리 글쓰기 스타일 */
+.gallery-write-wrap {max-width: 1200px; margin: 0 auto;}
+.gallery-write-wrap .gallery-write-box {padding: 20px;}
+.gallery-write-wrap .gallery-write-box h1 {text-align: center; font-size: 32px; margin-bottom: 30px;}
+
+.gallery-write-wrap .gallery-write-box .write-form {border: 1px solid #ccc; background: #fff;}
+.gallery-write-wrap .gallery-write-box .write-form ul {padding: 10px;}
+.gallery-write-wrap .gallery-write-box .write-form ul li {padding: 10px;}
+.gallery-write-wrap .gallery-write-box .write-form ul li > label {display: block; font-size: 15px; margin-bottom: 10px;}
+.gallery-write-wrap .gallery-write-box .write-form ul li > div > label {font-size: 15px;}
+.gallery-write-wrap .gallery-write-box .write-form ul li > div > input {padding: 5px;}
+.gallery-write-wrap .gallery-write-box .write-form ul li > input {font-size: 15px; padding: 5px; width: 100%;}
+.gallery-write-wrap .gallery-write-box .write-form ul li textarea {font-size: 12px; width: 100%; height: 400px; padding: 5px;}
+
+/* 자유게시판 스타일 */
+.free-wrap {text-align: center; max-width: 1200px; margin: 0 auto;}
+.free-wrap .free-box {max-width: 1200px;}
+
+.free-box ul {background: #fff;}
+.free-box ul.th {border-top: 2px solid #000;}
+.free-box ul li {display: table; width: 100%;}
+
+.free-box ul li div {display: table-cell; border-bottom: 1px solid #ccc; padding: 10px; font-size: 15px;}
+.free-box ul li div.no {width: 10%;}
+.free-box ul li div.title {width: 50%;}
+.free-box ul li div.title a {width: 50%; font-weight: bold;}
+.free-box ul li div.title a:hover {font-style: italic;}
+.free-box ul li div.writer {width: 15%;}
+.free-box ul li div.date {width: 25%;}
+
+/* 자유게시판 뷰 스타일 */
+.free-view-wrap {max-width: 1200px; margin: 0 auto;}
+
+/* 자유게시판 글쓰기 스타일 */
+.free-write-wrap {max-width: 1200px; margin: 0 auto;}
+.free-write-wrap .free-write-box {padding: 20px;}
+.free-write-wrap .free-write-box h1 {text-align: center; font-size: 32px; margin-bottom: 30px;}
+
+.free-write-wrap .free-write-box .write-form {border: 1px solid #ccc; background: #fff;}
+.free-write-wrap .free-write-box .write-form ul {padding: 10px;}
+.free-write-wrap .free-write-box .write-form ul li {padding: 10px;}
+.free-write-wrap .free-write-box .write-form ul li > label {display: block; font-size: 15px; margin-bottom: 10px;}
+.free-write-wrap .free-write-box .write-form ul li > div > label {font-size: 15px;}
+.free-write-wrap .free-write-box .write-form ul li > div > input {padding: 5px;}
+.free-write-wrap .free-write-box .write-form ul li > input {font-size: 15px; padding: 5px; width: 100%;}
+.free-write-wrap .free-write-box .write-form ul li textarea {font-size: 12px; width: 100%; height: 400px; padding: 5px;}
+
+/* 예약하기 스타일 */
+.booking {max-width: 1200px; margin: 0 auto;}
+.booking h2 {text-align: center; margin-top: 20px; font-size: 30px;}
+
+.booking-wrap {max-width: 100%; margin-bottom: 20px;}
+.booking-wrap ul li {padding: 10px;}
+.booking-wrap ul li .booking-box {overflow: hidden; border: 1px solid #ccc; background: #fff;}
+.booking-wrap ul li .booking-box > div {float: left; padding: 10px;}
+
+.booking-wrap ul li .booking-box > div.thum {width: 30%;}
+.booking-wrap ul li .booking-box > div.info {width: 70%;}
+
+.booking-wrap ul li .booking-box > div.info h3 {font-size: 25px;}
+.booking-wrap ul li .booking-box > div.info p {font-size: 15px; color: #666; margin-top: 10px;}
+.booking-wrap ul li .booking-box > div.info span {font-size: 13px; color: #999; margin-top: 10px; display: block;}
+
+/* 예약하기 상세보기 */
+.view-photo {padding: 10px 0; margin: 20px 0;}
+.view-photo img {max-height: 300px; width: 100%;}
+
+.booking-box {max-width: 1200px; margin: 0 auto;}
+.booking-box h2 {text-align: center; font-size: 30px; margin: 20px;}
+
+.calendar-box {background: #fff; font-size: 15px; padding: 10px 0; margin-bottom: 20px; border: 1px solid #ccc;}
+
+.cal-hd {text-align: center; padding: 10px;}
+.cal-hd span.month {font-size: 24px; font-weight: bold; padding: 0 20px;}
+.cal-hd span.before {background: #e1e1e1; padding: 10px; border-radius: 50%;}
+.cal-hd span.after {background: #ccc; padding: 10px; border-radius: 50%;}
+
+.cal-bd ul {overflow: hidden;}
+.cal-bd ul.style01 {font-weight: bold;}
+
+.cal-bd ul li {float: left; width: 14.28%; text-align: center;}
+.cal-bd ul li:first-child a {color: red;}
+.cal-bd ul li:last-child a {color: blue;}
+.cal-bd ul li a {display: block; padding: 10px;}
+
+.cal-bd ul li a span.today {background: #8bcaff; color: #fff; padding: 10px; border-radius: 10px;}
+.cal-bd ul li a span.off {color: #ccc;}
+.cal-bd ul li a span.selected {background: #8bcaff; color: #fff; padding: 10px; border-radius: 10px;}
+.cal-bd ul li a:hover span:not(.off, .day) {background: #8bcaff; color: #fff; padding: 10px; border-radius: 10px;}
+
+.btn-box {overflow: hidden;}
+.btn-box a {float: right; padding: 10px; background: #8bcaff; color: #fff; border-radius: 10px; margin: 5px;}
+.btn-box a:hover {background: #3078b5;}
+
+.detail {border: 1px solid #ccc; margin: 20px 0;}
+.detail .text {background: #fff; height: 150px; padding: 10px;}
+.detail .text p {font-size: 13px;}
+
+/* 예약확인 스타일 */
+.mypage-wrap {max-width: 1200px; margin: 0 auto;}
+.mypage-wrap h2 {text-align: center; font-size: 30px; margin-top: 20px;}
+
+.mypage-box {background: #fff; font-size: 13px; margin: 20px 0;}
+.mypage-box ul {text-align: center;}
+.mypage-box ul.th {border-top: 2px solid #000; font-weight: bold;}
+.mypage-box ul.td {}
+
+.mypage-box ul li {width: 100%; border-bottom: 1px solid #ccc; padding: 10px;}
+.mypage-box ul li div {display: inline-block;}
+
+.mypage-box ul li div.no {width: 5%;}
+.mypage-box ul li div.subject {width: 40%; font-weight: bold;}
+.mypage-box ul li div.state {width: 15%; font-weight: bold;}
+.mypage-box ul li div.date {width: 20%;}
+.mypage-box ul li div.name {width: 15%;}
+
+.mypage-box ul li div.state span.wait {color: blue;}
+.mypage-box ul li div.state span.deny {color: #000;}
+.mypage-box ul li div.state span.cancel {color: red;}
+.mypage-box ul li div.state span.accept {color: green;}
+
+.mypage-wrap .paging {text-align: center;}
+
+/* 로그인 스타일 */
+.login-box {max-width: 400px; margin: 0 auto;}
+.login-box h1 {font-size: 30px; text-align: center; margin: 20px 0;}
+
+.login {background: #fff; border: 1px solid #ccc; padding: 20px; border-radius: 10px; box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);} 
+.login ul {}
+.login ul li {padding: 10px; text-align: center;}
+.login ul li input {font-size: 15px; padding: 5px; border-radius: 10px; width: 100%;}
+.login ul li a {padding: 8px 15px; font-size: 15px; background: #8bcaff; border-radius: 10px; color: #fff;}
+.login ul li a:hover {background: #3078b5;}
+
+.login-btn {text-align: center; margin: 20px 0; font-weight: bold; font-size: 15px;}
+
+/* 회원가입 스타일 */
+.join-box {padding: 50px;}
+.join-box h1 {text-align: center; margin-bottom: 20px; font-size: 30px;}
+
+.join-box .join-form {max-width:400px; margin: 0 auto; background: #fff; border: 1px solid #ccc; border-radius: 25px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);}
+
+.join-box .join-form input {border-radius: 10px;}
+.join-box .join-form input[type="text"] {width: 100%; height: 40px; border: 1px solid #ccc;  padding: 5px;}
+.join-box .join-form input[type="password"] {width: 100%;height: 40px;border: 1px solid #ccc; padding: 5px;}
+.join-box .join-form select {width: 100%; height: 40px; border: 1px solid #ccc; padding: 5px;}
+
+.join-box .join-form label {display: block;}
+.join-box .join-form ul li {margin-bottom: 10px;}
+.join-box .join-form ul li label {font-size: 15px; color: #000; margin-bottom: 3px;}
+
+.join-box .join-form ul li.gender span {display: inline-block;}
+.join-box .join-form ul li.gender span label {display: inline-block; font-size: 13px;}
+.join-box .join-form ul li.address span.zipcode input {width: 100px; margin-right: 5px;}
+.join-box .join-form ul li.address span.zipcode button {width: 100px; height: 40px; background: #8bcaff; color: #fff; border-radius: 10px; border: 0;}
+.join-box .join-form ul li.address span.zipcode button:hover {background: #3078b5;}
+.join-box .join-form ul li.address span {margin-bottom: 5px; display: block;}
+
+.join-box .join-btn {text-align: center;}
+.join-box .join-btn a {display: inline-block; background: #8bcaff; color: #fff; margin: 5px; padding: 10px 0px; width: 100px; transition: all 0.3s; border-radius: 10px;}
+.join-box .join-btn a:hover {background: #3078b5;}
+
+/* 소개 스타일 */
+.section h2 {text-shadow: -1px 0 #000,
+	   0 1px #000,
+	   1px 0 #000,
+	   0 -1px #000;}
+
+#section0 {background: url('https://hdqwalls.com/download/super-cute-animals-1366x768.jpg'); background-size: cover; background-position: center;}
+.section00-box {text-align: center;}
+.section00-box h2 {font-size: 70px; color: #fff;}
+.section00-box p {font-size: 40px; color: #fff;}
+.section00-box p b {color: #8bcaff; font-size: 50px; text-shadow: -1px 0 #000,
+	   0 1px #000,
+	   1px 0 #000,
+	   0 -1px #000;}
+
+#section1 {background: url('https://cdn.wallpapersafari.com/58/67/bu9evg.jpg'); background-size: cover; background-position: center;}
+.section01-box {text-align: center;}
+.section01-box h2 {font-size: 70px; color: #fff;}
+.section01-box p {font-size: 40px; color: #fff;}
+
+#section2 {background: url('https://compote.slate.com/images/73f0857e-2a1a-4fea-b97a-bd4c241c01f5.jpg'); background-size: cover; background-position: center;}
+.section02-box {text-align: center;}
+.section02-box h2 {font-size: 70px; color: #fff;}
+.section02-box p {font-size: 40px; color: #fff;}
+
+#section3 {background: url('https://cdn.abcotvs.com/dip/images/1132457_122215-otter-pup-1280.jpg?w=1600'); background-size: cover; background-position: center;}
+.section03-box {text-align: center;}
+.section03-box h2 {font-size: 70px; color: #fff;}
+.section03-box p {font-size: 40px; color: #fff;}
+
+/* 관리자 메뉴 스타일 */
+.adm-menu {background: #005baf; border-bottom: 1px solid #e1e1e1;}
+.adm-menu ul {text-align: center; }
+.adm-menu ul li {display: inline-block; margin: 5px;}
+.adm-menu ul li:before {content: ""; display: inline-block; width: 1px; height: 10px; background: #fff; margin-right: 15px;} /* 막대값을 넣어 구분선 생성 */
+.adm-menu ul li:last-child:after {content: ""; display: inline-block; width: 1px; height: 10px; background: #fff; margin-left: 15px;}
+.adm-menu ul li a {display: inline-block; padding: 5px 10px; color: #fff; font-size: 16px;}
+.adm-menu ul li a:hover {color: #fff700; font-weight: bold;}
+.adm-menu ul li.on a {color: #faf200; font-weight: bold;}
+
+/* 관리자 환경설정 스타일 */
+.admin-set {padding: 50px;}
+.admin-set h1 {text-align: center; margin-bottom: 20px;}
+
+.admin-set .join-form {max-width: 800px; margin: 0 auto; background: #fff; border: 1px solid #ccc; border-radius: 5px; padding: 20px;}
+.admin-set .join-form input[type="text"] {width: 100%; height: 40px; border: 1px solid #ccc; padding: 5px;}
+.admin-set .join-form label {display: block;}
+.admin-set .join-form ul li {margin-bottom: 10px;}
+.admin-set .join-form ul li label {font-size: 15px; color: #000; margin-bottom: 3px;}
+.admin-set .join-form ul li.address span.zipcode input {width: 100px; margin-right: 5px;}
+.admin-set .join-form ul li.address span.zipcode button {width: 100px; height: 40px; background: #004d95; color: #fff; border: 0; transition: all 0.3s; border-radius: 5px;}
+.admin-set .join-form ul li.address span.zipcode button:hover {background: #6817d3; border-radius: 20px;}
+.admin-set .join-form ul li.address span {margin-bottom: 5px; display: block;}
+
+.admin-set .join-btn {text-align: center;}
+.admin-set .join-btn a {display: inline-block; background: #004d95; color: #fff; margin: 5px; padding: 10px 0px; width: 100px; transition: all 0.3s; border-radius: 5px;}
+.admin-set .join-btn a:hover {background: #03b700; border-radius: 20px;}
+
+/* 게시판 관리 스타일 */
+.board-table {background: #fff;}
+.board-table ul.board-hd {text-align: center; border-top: 2px solid #000;}
+.board-table ul.board-bd {text-align: center;}
+.board-table ul.board-bd .board-name{text-align: left;}
+.board-table ul li {display: table; width: 100%;}
+.board-table ul li > div {display: table-cell; border-bottom: 1px solid #ccc; padding: 10px;}
+.board-table ul li > div.no {width: 10%;}
+.board-table ul li > div.board-name {width: 40%;}
+.board-table ul li > div.board-name a {font-weight: bold; font-size: 14px;}
+.board-table ul li > div.board-name a:hover {text-decoration: underline; color: #26649e;}
+.board-table ul li > div.type {width: 10%;}
+.board-table ul li > div.date {width: 20%;}
+.board-table ul li > div.control {width: 10%;}
+
+.board-table ul li > div.control a {display: inline-block; background: #005baf; color: #fff; padding: 5px; margin: 2px; border-radius: 5px;}
+.board-table ul li > div.control a:hover {background: #ccc; color: #fff; font-weight: bold;}
+
+/* 게시판 생성 버튼 */
+.board-btn-box {text-align: right;}
+.board-btn-box a { display: inline-block; background: #004d95; color: #fff; border: 1px solid #004d95; border-radius: 10px; 
+padding: 5px 10px; margin: 5px; transition: all 0.3s; font-size: 16px;}
+.board-btn-box a:hover {background: #005baf;}
+
+
+/* 게시판 생성 스타일 */
+.create-board {padding: 50px;}
+.create-board h1 {text-align: center; margin-bottom: 20px; font-size: 24px;}
+
+.create-board .write-form {max-width: 600px; margin: 0 auto; background: #fff; border: 1px solid #ccc; border-radius: 5px; padding: 20px;}
+.create-board .write-form input[type="text"] {width: 100%; height: 40px; border: 1px solid #ccc; padding: 5px;}
+.create-board .write-form label {display: block; margin-bottom: 5px;}
+.create-board .write-form ul li {margin-bottom: 10px;}
+.create-board .write-form ul li label {font-size: 14px; color: #000;}
+
+.create-board .write-form select {width: 100%; height: 40px; border: 1px solid #ccc; padding: 5px;}
+.create-board .write-form select option {font-size: 15px;}
+.create-board .write-form textarea {width: 100%; height: 300px;}
+
+.create-board .check-box label.check-text {display: inline-block; font-size: 12px;}
+.create-board li.check-box {background: #fff; padding: 10px;}
+
+.create-board .write-btn {text-align: center;}
+.create-board .write-btn a {display: inline-block; background: #004d95; color: #fff; margin: 5px; padding: 10px 0px; width: 100px; transition: all 0.3s; border-radius: 5px;}
+.create-board .write-btn a:hover {background: #03b700; border-radius: 10px;}
+
+/* 회원관리 스타일 */
+.adm-mb-table {background: #fff;}
+.adm-mb-table ul.board-hd {text-align: center; border-top: 2px solid #000;}
+.adm-mb-table ul.board-bd {text-align: center;}
+.adm-mb-table ul.board-bd .board-name{text-align: left;}
+.adm-mb-table ul li {display: table; width: 100%;}
+.adm-mb-table ul li > div {display: table-cell; border-bottom: 1px solid #ccc; padding: 10px;}
+.adm-mb-table ul li > div.no {width: 5%;}
+.adm-mb-table ul li > div.name {width: 7%;}
+.adm-mb-table ul li > div.tel {width: 15%;}
+.adm-mb-table ul li > div.email {width: 15%;}
+.adm-mb-table ul li > div.birth {width: 10%;}
+.adm-mb-table ul li > div.address {width: 25%;}
+.adm-mb-table ul li > div.date {width: 10%;}
+.adm-mb-table ul li > div.control {width: 13%;}
+
+.adm-mb-table ul li > div.control a {display: inline-block; background: #005baf; color: #fff; padding: 5px; margin: 2px; border-radius: 5px;}
+.adm-mb-table ul li > div.control a:hover {background: #ccc; color: #fff; font-weight: bold;}
+
+/* 회원등록 스타일 */
+.adm-mb-form {padding: 50px;}
+.adm-mb-form h1 {text-align: center; margin-bottom: 20px;}
+.adm-mb-form .join-form {max-width:400px; margin: 0 auto; background: #fff; border: 1px solid #ccc; border-radius: 25px; padding: 20px;}
+
+.adm-mb-form .join-form input[type="text"] {width: 100%; height: 40px; border: 1px solid #ccc; padding: 5px;}
+.adm-mb-form .join-form input[type="password"] {width: 100%; height: 40px; border: 1px solid #ccc; padding: 5px;}
+.adm-mb-form .join-form select {width: 100%; height: 40px; border: 1px solid #ccc; padding: 5px;}
+
+.adm-mb-form .join-form label {display: block;}
+.adm-mb-form .join-form ul li {margin-bottom: 10px;}
+.adm-mb-form .join-form ul li label {font-size: 15px; color: #000; margin-bottom: 3px;}
+
+.adm-mb-form .join-form ul li.gender span {display: inline-block;}
+.adm-mb-form .join-form ul li.gender span label {display: inline-block; font-size: 13px;}
+.adm-mb-form .join-form ul li.address span.zipcode input {width: 100px; margin-right: 5px;}
+.adm-mb-form .join-form ul li.address span.zipcode button {width: 100px; height: 40px; background: #004d95; color: #fff; border: 0; transition: all 0.3s;}
+.adm-mb-form .join-form ul li.address span.zipcode button:hover {background: #6817d3; border-radius: 20px;}
+.adm-mb-form .join-form ul li.address span {margin-bottom: 5px; display: block;}
+
+.adm-mb-form .join-btn {text-align: center;}
+.adm-mb-form .join-btn a {display: inline-block; background: #004d95; color: #fff; margin: 5px; padding: 10px 0px; width: 100px; transition: all 0.3s;}
+.adm-mb-form .join-btn a:hover {background: #03b700; border-radius: 20px;}
+
+/* 팝업 관리 스타일 */
+.admin-popup {background: #fff;}
+.admin-popup ul.board-hd {text-align: center; border-top: 2px solid #000;}
+.admin-popup ul.board-bd {text-align: center;}
+.admin-popup ul.board-bd .board-name{text-align: left;}
+.admin-popup ul li {display: table; width: 100%;}
+.admin-popup ul li > div {display: table-cell; border-bottom: 1px solid #ccc; padding: 10px;}
+
+.admin-popup ul li > div.no {width: 10%;}
+.admin-popup ul li > div.board-name {width: 35%;}
+.admin-popup ul li > div.s-date {width: 20%;}
+.admin-popup ul li > div.use {width: 10%;}
+.admin-popup ul li > div.date {width: 10%;}
+.admin-popup ul li > div.control {width: 15%;}
+
+.admin-popup ul li > div.control a {display: inline-block; background: #005baf; color: #fff; padding: 5px; margin: 2px; border-radius: 5px;}
+.admin-popup ul li > div.control a:hover {background: #ccc; color: #fff; font-weight: bold;}
+
+/* 팝업 생성 스타일 */
+.write-form .s-date-input input[type="text"]{width: 30%;}
+
+/* 배너 관리 스타일 */
+.admin-banner {background: #fff;}
+.admin-banner ul.board-hd {text-align: center; border-top: 2px solid #000;}
+.admin-banner ul.board-bd {text-align: center;}
+.admin-banner ul.board-bd .board-name{text-align: left;}
+.admin-banner ul li {display: table; width: 100%;}
+.admin-banner ul li > div {display: table-cell; border-bottom: 1px solid #ccc; padding: 10px;}
+
+.admin-banner ul li > div.no {width: 10%;}
+.admin-banner ul li > div.where {width: 10%;}
+.admin-banner ul li > div.board-name {width: 25%;}
+.admin-banner ul li > div.s-date {width: 20%;}
+.admin-banner ul li > div.use {width: 10%;}
+.admin-banner ul li > div.date {width: 10%;}
+.admin-banner ul li > div.control {width: 15%;}
+
+.admin-banner ul li > div.control a {display: inline-block; background: #005baf; color: #fff; padding: 5px; margin: 2px; border-radius: 5px;}
+.admin-banner ul li > div.control a:hover {background: #ccc; color: #fff; font-weight: bold;}
+
+/* 장소 관리 스타일 */
+.admin-booking-table {background: #fff;}
+.admin-booking-table ul.board-hd {text-align: center; border-top: 2px solid #000;}
+.admin-booking-table ul.board-bd {text-align: center;}
+.admin-booking-table ul.board-bd .board-name{text-align: left;}
+.admin-booking-table ul li {display: table; width: 100%;}
+.admin-booking-table ul li > div {display: table-cell; border-bottom: 1px solid #ccc; padding: 10px;}
+.admin-booking-table ul li > div.no {width: 10%;}
+.admin-booking-table ul li > div.board-name {width: 45%;}
+.admin-booking-table ul li > div.board-name a {font-weight: bold; font-size: 14px;}
+.admin-booking-table ul li > div.board-name a:hover {text-decoration: underline; color: #26649e;}
+.admin-booking-table ul li > div.type {width: 10%;}
+.admin-booking-table ul li > div.date {width: 20%;}
+.admin-booking-table ul li > div.control {width: 15%;}
+
+.admin-booking-table ul li > div.control a {display: inline-block; background: #005baf; color: #fff; padding: 5px; margin: 2px; border-radius: 5px;}
+.admin-booking-table ul li > div.control a:hover {background: #ccc; color: #fff; font-weight: bold;}
+ 
+ /* 관리자 검색상자 */
+.notice-box {overflow: hidden;}
+.notice-box h1 {font-size: 30px; padding: 20px;}
+.notice-box .search-box {text-align: right; padding: 20px 0;}
+.notice-box .search-box input {font-size: 13px; padding: 5px;}
+.notice-box .search-box button {border: 0; background: #8bcaff; padding: 7px 15px; font-size: 13px; color: #fff; border-radius: 5px;}
+.notice-box .search-box button:hover {background: #26649e;}
+ 
+ /* 관리자 페이징 */
+.notice-box .paging {margin: 20px 0;}
+.notice-box .paging ul {text-align: center; background: none;}
+.notice-box .paging ul li {display: inline; margin: 5px 0px;}
+.notice-box .paging ul li a {padding: 5px 10px; border: 1px solid #000; background: #fff;}
+.notice-box .paging ul li.on a {background: #000; color: #fff; border: 1px solid #000;}

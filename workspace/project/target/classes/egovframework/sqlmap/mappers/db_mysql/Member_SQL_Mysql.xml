@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberDAO"> 
+	<!-- 가입 -->
+	<insert id="memberDAO.insertMember" parameterType="memberVO">
+		<![CDATA[
+			INSERT INTO
+				MEMBER
+			SET
+				id = #{id},
+				password = #{password},
+				name = #{name},
+				phone = #{phone},
+				birth = #{birth},
+				gender = #{gender},
+				job = #{job},
+				address = #{address}
+		]]>
+	</insert>
+	<!-- //가입 -->
+	
+	<!-- ID 중복체크 -->
+	<select id="memberDAO.selectMemberCnt" parameterType="memberVO" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM MEMBER WHERE id = #{id}
+		]]>
+	</select>
+	<!-- //ID 중복체크 -->
+</mapper>

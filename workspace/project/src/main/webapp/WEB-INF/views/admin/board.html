@@ -1,0 +1,88 @@
+<?php include('../subheader.php'); ?>
+	<!-- 관리자 메뉴 -->
+	<div class="adm-menu">
+		<ul>
+			<li><a href="./set.html">환경설정</a></li>
+			<li class="on"><a href="./board.html">게시판 관리</a></li>
+			<li><a href="./member.html">회원 관리</a></li>
+			<li><a href="./popup.html">팝업 관리</a></li>
+			<li><a href="./banner.html">배너 관리</a></li>
+			<li><a href="./booking.html">장소 관리</a></li>
+		</ul>
+	</div>
+
+	<!-- 게시판관리 화면 -->
+	<div class="contents">	
+		<!-- 게시판관리 화면 -->
+		<div class="notice-wrap">
+			<div class="notice-box">
+				<h1>게시판 관리</h1>
+				
+				<div class="search-box">
+					<input type="text">
+					<button>검색</button>
+				</div>
+				
+				<div class="board-table">
+					<ul class="board-hd">
+						<li>
+							<div class="no">번호</div>
+							<div class="board-name">게시판 명</div>
+							<div class="type">게시판 타입</div>
+							<div class="date">등록일</div>
+							<div class="control">관리</div>
+						</li>
+					</ul>
+					<ul class="board-bd">
+						<li>
+							<div class="no">3</div>
+							<div class="board-name"><a href="../bbs/notice_list.html">공지사항</a></div>
+							<div class="type">일반</div>
+							<div class="date">2021-04-21</div>
+							<div class="control">
+								<a href="./board_form.html">수정</a> &nbsp;
+								<a href="#none">삭제</a>
+							</div>
+						</li>
+						<li>
+							<div class="no">2</div>
+							<div class="board-name"><a href="../bbs/gallery_list.html">갤러리</a></div>
+							<div class="type">갤러리</div>
+							<div class="date">2021-04-21</div>
+							<div class="control">
+								<a href="./board_form.html">수정</a> &nbsp;
+								<a href="#none">삭제</a>
+							</div>
+						</li>
+						<li>
+							<div class="no">1</div>
+							<div class="board-name"><a href="../bbs/free_list.html">자유게시판</a></div>
+							<div class="type">일반</div>
+							<div class="date">2021-04-21</div>
+							<div class="control">
+								<a href="./board_form.html">수정</a> &nbsp;
+								<a href="#none">삭제</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="paging">
+					<ul>
+						<li><a href="#none">처음으로</a></li>
+						<li><a href="#none">이전</a></li>
+						<li class="on"><a href="#none">1</a></li>
+						<li><a href="#none">2</a></li>
+						<li><a href="#none">3</a></li>
+						<li><a href="#none">다음</a></li>
+						<li><a href="#none">마지막</a></li>
+					</ul>
+				</div>
+
+				<div class="board-btn-box">
+					<a href="./board_form.html">게시판 생성</a>
+				</div>
+			</div>
+		</div>	
+	</div>
+<?php include('../subfooter.php'); ?>

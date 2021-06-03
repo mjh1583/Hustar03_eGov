@@ -1,0 +1,101 @@
+<?php include('../subheader.php'); ?>
+	<!-- 관리자 메뉴 -->
+	<div class="adm-menu">
+		<ul>
+			<li><a href="./set.html">환경설정</a></li>
+			<li><a href="./board.html">게시판 관리</a></li>
+			<li class="on"><a href="./member.html">회원 관리</a></li>
+			<li><a href="./popup.html">팝업 관리</a></li>
+			<li><a href="./banner.html">배너 관리</a></li>
+			<li><a href="./booking.html">장소 관리</a></li>
+		</ul>
+	</div>
+	
+	<!-- 회원관리 화면 -->
+	<div class="contents">	
+		<!-- 회원관리 화면 -->
+		<div class="notice-wrap">
+			<div class="notice-box">
+				<h1>회원관리</h1>
+				
+				<div class="search-box">
+					<input type="text">
+					<button>검색</button>
+				</div>
+				
+				<div class="adm-mb-table">
+					<ul class="board-hd">
+						<li>
+							<div class="no">번호</div>
+							<div class="name">이름</div>
+							<div class="tel">연락처</div>
+							<div class="email">이메일</div>
+							<div class="birth">생년월일</div>
+							<div class="address">주소</div>
+							<div class="date">등록일</div>
+							<div class="control">관리</div>
+						</li>
+					</ul>
+					<ul class="board-bd">
+						<li>
+							<div class="no">3</div>
+							<div class="name">관리자</div>
+							<div class="tel">010-1234-5678</div>
+							<div class="email">test@gmail.com</div>
+							<div class="birth">90.01.01</div>
+							<div class="address">대구 동구 동내로 70</div>
+							<div class="date">2021-04-21</div>
+							<div class="control">
+								<a href="./member_form.html">수정</a> &nbsp;
+								<a href="#none">삭제</a>
+							</div>
+						</li>
+						<li>
+							<div class="no">2</div>
+							<div class="name">관리자</div>
+							<div class="tel">010-1234-5678</div>
+							<div class="email">test@gmail.com</div>
+							<div class="birth">90.01.01</div>
+							<div class="address">대구 동구 동내로 70</div>
+							<div class="date">2021-04-21</div>
+							<div class="control">
+								<a href="./member_form.html">수정</a> &nbsp;
+								<a href="#none">삭제</a>
+							</div>
+						</li>
+						<li>
+							<div class="no">1</div>
+							<div class="name">관리자</div>
+							<div class="tel">010-1234-5678</div>
+							<div class="email">test@gmail.com</div>
+							<div class="birth">90.01.01</div>
+							<div class="address">대구 동구 동내로 70</div>
+							<div class="date">2021-04-21</div>
+							<div class="control">
+								<a href="./member_form.html">수정</a> &nbsp;
+								<a href="#none">삭제</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="paging">
+					<ul>
+						<li><a href="#none">처음으로</a></li>
+						<li><a href="#none">이전</a></li>
+						<li class="on"><a href="#none">1</a></li>
+						<li><a href="#none">2</a></li>
+						<li><a href="#none">3</a></li>
+						<li><a href="#none">다음</a></li>
+						<li><a href="#none">마지막</a></li>
+					</ul>
+				</div>
+
+				<div class="board-btn-box">
+					<a href="./member_form.html">회원등록</a>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+<?php include('../subfooter.php'); ?>
