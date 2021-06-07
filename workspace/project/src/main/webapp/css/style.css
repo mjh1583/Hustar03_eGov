@@ -181,7 +181,7 @@ img {max-width:100%; height:auto; width: auto\9;}
 .search-box div button:hover {background: #3078b5; border: 3px solid #3078b5; }
 
 .paging div ul {padding: 10px;}
-.paging div ul li {display: inline-block; padding: 2px 10px; background: #fff; border-radius: 2px; font-weight: bold; border: 1px solid #000;}
+.paging div ul li {display: inline-block; padding: 2px 2px; background: #fff; border-radius: 2px; font-weight: bold; border: 1px solid #000; margin: 0 2px;}
 .paging div ul li.on {background: #ffe9c8; font-size: 13px;}
 .paging div ul li:hover {background: #ffe9c8;}
 .paging div ul li a {padding: 10px;}

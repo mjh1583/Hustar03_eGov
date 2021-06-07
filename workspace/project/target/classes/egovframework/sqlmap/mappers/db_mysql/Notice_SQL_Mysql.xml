@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="noticeDAO"> 
+	<!-- 공지사항 목록 -->
+	<select id="noticeDAO.selectNoticeList" parameterType="noticeVO" resultType="noticeVO">
+		<!-- 
+			$ : 쿼리문 조작 가능 = 위험함
+			# : 맞는 타입의 데이터만 들어감 = 안전
+		 -->
+		<![CDATA[
+			SELECT * FROM NOTICE 
+				WHERE subject LIKE CONCAT('%', #{searchKeyword}, '%')
+				ORDER BY date DESC, subject DESC
+				LIMIT ${recordCountPerPage} 
+				OFFSET ${firstIndex}
+		]]>
+	</select>
+	<!-- //공지사항 목록 -->
+	
+	<!-- 공지사항 목록 개수 -->
+	<select id="noticeDAO.selectNoticeListCnt" parameterType="noticeVO" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM NOTICE
+				WHERE subject LIKE CONCAT('%', #{searchKeyword}, '%')
+		]]>
+	</select>
+	<!-- //공지사항 목록 개수 -->
+	
+	<select id="noticeDAO.selectNoticeDetail" parameterType="int" resultType="noticeVO">
+		<![CDATA[
+			SELECT * FROM NOTICE 
+				WHERE seq = #{seq}
+		]]>
+	</select>
+</mapper>

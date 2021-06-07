@@ -10,7 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
@@ -46,6 +50,15 @@ public class MemberController {
 			System.out.println("msg = " + inputFlashMap.get("msg"));
 		}
 		return "/member/login";
+	}
+	
+	@RequestMapping(value = "/member/actionLogout.do")
+	public String actionLogout() throws Exception {
+		// 로그아웃
+		RequestAttributes request = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+		request.setAttribute("login", null, RequestAttributes.SCOPE_SESSION);
+		//return "redirect:/index.do";
+		return "redirect:/member/login.do";
 	}
 	
 	// 회원가입 화면
@@ -136,6 +149,10 @@ public class MemberController {
 		
 		if(loginVO != null) {
 			if(BCrypt.checkpw(memberVO.getPassword(), loginVO.getPassword())) {
+				// 로그인 정보 메뉴에 전달
+				HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+				request.getSession().setAttribute("login", loginVO);
+				
 				return "redirect:/index.do";
 			}
 			else { // 비밀번호 불일치
@@ -148,5 +165,33 @@ public class MemberController {
 		}
 		
 		return "redirect:/member/login.do";
+	}
+	
+	// 비동기 방식의 로그인
+	@RequestMapping(value = "/member/actionLoginAsync.do")
+	public ModelAndView actionLoginAsync(ModelMap model, String id, String password, RedirectAttributes redirectAttributes) throws Exception {
+		MemberVO memberVO = new MemberVO();
+		memberVO.setId(id);
+		memberVO.setPassword(password);
+		MemberVO loginVO = (MemberVO) commonService.selectView(memberVO, null, null, "memberDAO.selectMemberView");
+				
+		if(loginVO != null) {
+			if(BCrypt.checkpw(memberVO.getPassword(), loginVO.getPassword())) {
+				// 로그인 정보 메뉴에 전달
+				HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+				request.getSession().setAttribute("login", loginVO);
+				
+				model.addAttribute("login", "true");
+			}
+			else { // 비밀번호 불일치
+				model.addAttribute("login", "false");
+			}
+		} 
+		else {
+			// ID가 존재하지 않음
+			model.addAttribute("login", "false");
+		}
+		
+		return new ModelAndView(jsonView);
 	}
 }

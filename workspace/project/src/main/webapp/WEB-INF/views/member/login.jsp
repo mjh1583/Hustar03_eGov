@@ -15,7 +15,8 @@
 					<input type="password" name="password" placeholder="  PW">
 				</li>
 				<li>
-					<a href="#none" onclick="actionLogin();">로그인</a>
+					<!-- <a href="#none" onclick="actionLogin();">로그인</a> -->
+					<a href="#none" onclick="actionLoginAsync();">로그인</a>
 				</li>
 			</ul>
 		</div>
@@ -45,6 +46,42 @@
 		else {
 			frm.submit();
 		}
+	}
+	
+	function actionLoginAsync() {
+		var frm = document.frm;
+		
+		var id = document.frm.id.value;
+		var password = document.frm.password.value;
+		
+		$.ajax({
+			type : 'POST',
+			url : '<c:url value="/member/actionLoginAsync.do"/>',
+			dataType : 'JSON',
+			data : {"id" : id, "password" : password},
+			success : function(data) {
+				if(id == "") {
+					alert("ID가 비어있습니다.");
+					id.focus();
+				}
+				else if(password == "") {
+					alert("Passsword가 비어있습니다.");
+					password.focus();
+				}
+				else {
+					if(data.login == "true") {
+						location.href = "<c:url value='/index.do' />";
+					}
+					else {
+						alert("로그인에 실패하였습니다.");
+						frm.password.focus();
+					}
+				}
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log(textStatus);
+			}
+		});
 	}
 </script>
 <!-- 하단 푸터 불러오기 -->
