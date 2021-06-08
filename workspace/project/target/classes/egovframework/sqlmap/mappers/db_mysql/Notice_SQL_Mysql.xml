@@ -6,11 +6,15 @@
 		<!-- 
 			$ : 쿼리문 조작 가능 = 위험함
 			# : 맞는 타입의 데이터만 들어감 = 안전
+			
+			리스트에서 카운트를 구하지 않는 이유
+			=> Limit ${recordCountPerPage} 만큼만 가져오기 때문
 		 -->
 		<![CDATA[
 			SELECT * FROM NOTICE 
-				WHERE subject LIKE CONCAT('%', #{searchKeyword}, '%')
-				ORDER BY date DESC, subject DESC
+				WHERE subject LIKE CONCAT('%', #{searchKeyword}, '%') 
+				OR writer LIKE CONCAT('%', #{searchKeyword}, '%')
+				ORDER BY date DESC, subject DESC, writer DESC
 				LIMIT ${recordCountPerPage} 
 				OFFSET ${firstIndex}
 		]]>
@@ -22,14 +26,49 @@
 		<![CDATA[
 			SELECT COUNT(*) FROM NOTICE
 				WHERE subject LIKE CONCAT('%', #{searchKeyword}, '%')
+				OR writer LIKE CONCAT('%', #{searchKeyword}, '%')
 		]]>
 	</select>
 	<!-- //공지사항 목록 개수 -->
 	
-	<select id="noticeDAO.selectNoticeDetail" parameterType="int" resultType="noticeVO">
+	<!-- 공지사항 상세 -->
+	<select id="noticeDAO.selectNoticeView" parameterType="noticeVO" resultType="noticeVO">
 		<![CDATA[
 			SELECT * FROM NOTICE 
 				WHERE seq = #{seq}
 		]]>
 	</select>
+	<!-- //공지사항 상세 -->
+	
+	<!-- 공지사항 입력 -->
+	<insert id="noticeDAO.insertNotice" parameterType="noticeVO">
+		<![CDATA[
+			INSERT INTO notice
+			(subject, writer, date, contents, filename, oriFilename) 
+			VALUES (#{subject}, #{writer}, NOW(), #{contents}, #{filename}, #{oriFilename})
+		]]>
+	</insert>
+	<!-- 공지사항 입력 -->
+	
+	<!-- 공지사항 삭제 -->
+	<delete id="noticeDAO.deleteNotice" parameterType="noticeVO">
+		<![CDATA[
+			DELETE FROM notice WHERE seq = #{seq}
+		]]>
+	</delete>
+	<!-- 공지사항 삭제 -->
+	
+	<!-- 공지사항 수정 -->
+	<update id="noticeDAO.updateNotice" parameterType="noticeVO">
+		UPDATE notice
+		<!-- 시작할때는 Set을 넣어주고 끝날때는 ,를 없애줌 -->
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="subject != null"><![CDATA[ subject = #{subject}, ]]></if> 
+			<if test="contents != null"><![CDATA[ contents = #{contents}, ]]></if> 
+			<if test="filename != null"><![CDATA[ filename = #{filename}, ]]></if> 
+			<if test="oriFilename != null"><![CDATA[ oriFilename = #{oriFilename}, ]]></if> 
+		</trim>
+		WHERE seq = #{seq}
+	</update>
+	<!-- //공지사항 수정 -->
 </mapper>

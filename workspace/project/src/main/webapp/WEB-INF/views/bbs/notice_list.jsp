@@ -2,17 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/inc/header.jsp" %>
 <%@ include file="/WEB-INF/views/inc/menu.jsp" %>
-		
-<div class="snb-wrap">
-	<div>
-		<ul>
-			<li class="on"><a href="<c:url value='/bbs/notice_list.do' />"><span>공지사항</span></a></li>
-			<li><a href="./free_list.html"><span>자유게시판</span></a></li>
-			<li><a href="./gallery_list.html"><span>갤러리</span></a></li>
-		</ul>
-	</div>
-</div>
-
+<%@ include file="/WEB-INF/views/bbs/submenu.jsp" %>
+<!-- 
+	자주 사용하는 jstl
+	c : out, url, forEach, set, if, when, param
+	fn : split, replace
+	fmt : formatNumber, formatDate
+ -->
 <form action="<c:url value='/bbs/notice_list.do'/>" method="get" name="frm">
 	<div class="notice-wrap">
 		<div class="search-box">
@@ -35,16 +31,16 @@
 				<ul class="td">
 					<li data-aos="fade-up" data-aos-delay="200">
 						<div class="no"><c:out value="${paginationInfo.totalRecordCount - ((paginationInfo.currentPageNo - 1) * paginationInfo.recordCountPerPage + status.index)}"/></div>
-						<div class="title"><a href="./notice_view.html"><c:out value="${noticeVO.subject}" /></a></div>
+						<div class="title"><a href='<c:url value="/bbs/notice_view.do"/>?seq=${noticeVO.seq}'><c:out value="${noticeVO.subject}" /></a></div>
 						<div class="writer"><c:out value="${noticeVO.writer}" /></div>
-						<div class="date"><c:out value="${noticeVO.date}" /></div>
+						<div class="date"><fmt:formatDate value="${noticeVO.date}" pattern="yyyy-MM-dd"/></div>
 					</li>
 				</ul>
 			</c:forEach>
 		</div> <!-- notice-box -->
 		
 		<div class="write-btn-box">
-			<a href="./notice_write.html">글쓰기</a>
+			<a href="<c:url value='/bbs/notice_write.do' />">글쓰기</a>
 		</div>
 	
 		<div class="paging">

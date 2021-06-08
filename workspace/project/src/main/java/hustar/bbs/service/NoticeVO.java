@@ -10,7 +10,25 @@ public class NoticeVO extends ComDefaultVO {
 	private String writer;
 	private Date date;
 	private String contents;
+	private String filename;
+	private String oriFilename;
 	
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public String getOriFilename() {
+		return oriFilename;
+	}
+
+	public void setOriFilename(String oriFilename) {
+		this.oriFilename = oriFilename;
+	}
+
 	public int getSeq() {
 		return seq;
 	}

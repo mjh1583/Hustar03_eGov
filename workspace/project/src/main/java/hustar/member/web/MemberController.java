@@ -89,16 +89,7 @@ public class MemberController {
 			@ModelAttribute("memberVO") MemberVO memberVO,
 			RedirectAttributes redirectAttributes // 메세지 전달
 			) throws Exception {
-		
-		System.out.println("id = " + memberVO.getId());
-		System.out.println("password = " + memberVO.getPassword());
-		System.out.println("name = " + memberVO.getName());
-		System.out.println("phone = " + memberVO.getPhone());
-		System.out.println("birth = " + memberVO.getBirth());
-		System.out.println("gender = " + memberVO.getGender());
-		System.out.println("job = " + memberVO.getJob());
-		System.out.println("address = " + memberVO.getAddress());
-		
+
 		// ID 중복체크
 		int cnt = commonService.selectListTotCnt(memberVO, null, null, "memberDAO.selectMemberCnt");
 
