@@ -18,7 +18,7 @@
 					<ul>
 						<c:if test="${not empty session}">
 							<li><a href="<c:url value='/member/actionLogout.do' />"><c:out value="${session.name}"/> 로그아웃</a></li>
-							<li><a href="<c:url value='/member/mypage.do' />">정보수정</a></li>
+							<li><a href="<c:url value='/booking/mypage.do' />">마이페이지</a></li>
 							<c:if test="${session.id eq 'admin'}">
 								<li><a href="<c:url value='/admin/set.do' />">관리자</a></li>
 							</c:if>
@@ -36,7 +36,7 @@
 						<li><a href="<c:url value='/page/intro.do' />">소개</a></li>
 						<li><a href="<c:url value='/bbs/notice_list.do' />">공유하기</a></li>
 						<li><a href="<c:url value='/booking/list.do' />">예약하기</a></li>
-						<li><a href="<c:url value='/member/mypage.do' />">예약확인</a></li>
+						<li><a href="<c:url value='/booking/mypage.do' />">예약확인</a></li>
 					</ul>	
 				</div> <!-- general navigate bar -->
 	

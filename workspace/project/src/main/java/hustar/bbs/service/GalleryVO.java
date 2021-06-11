@@ -4,7 +4,7 @@ import java.util.Date;
 
 import egovframework.com.cmm.ComDefaultVO;
 
-public class NoticeVO extends ComDefaultVO {
+public class GalleryVO extends ComDefaultVO {
 	private int seq;
 	private String subject;
 	private String writer;

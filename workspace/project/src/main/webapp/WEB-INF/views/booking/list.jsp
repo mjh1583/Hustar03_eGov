@@ -19,10 +19,10 @@
 			<li data-aos="fade-up" data-aos-delay="100">
 				<div class="booking-box">
 					<div class="thum">
-						<a href="<c:url value='/booking/view.do' />"><img src="../img/beluga.jpg" alt=""></a>
+						<a href="<c:url value='/booking/view.do' />?location=장소명1"><img src="../img/beluga.jpg" alt=""></a>
 					</div>
 					<div class="info">
-						<a href="<c:url value='/booking/view.do' />"><h3>장소명</h3></a>
+						<a href="<c:url value='/booking/view.do' />?location=장소명1"><h3>장소명1</h3></a>
 						<p>장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명</p>
 						<span>2021-05-03</span>
 					</div>
@@ -31,10 +31,10 @@
 			<li data-aos="fade-up" data-aos-delay="200">
 				<div class="booking-box">
 					<div class="thum">
-						<a href="<c:url value='/booking/view.do' />"><img src="../img/cat.jpg" alt=""></a>
+						<a href="<c:url value='/booking/view.do' />?location=장소명2"><img src="../img/cat.jpg" alt=""></a>
 					</div>
 					<div class="info">
-						<a href="<c:url value='/booking/view.do' />"><h3>장소명</h3></a>
+						<a href="<c:url value='/booking/view.do' />?location=장소명2"><h3>장소명2</h3></a>
 						<p>장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명</p>
 						<span>2021-05-03</span>
 					</div>
@@ -43,10 +43,10 @@
 			<li data-aos="fade-up" data-aos-delay="300">
 				<div class="booking-box">
 					<div class="thum">
-						<a href="<c:url value='/booking/view.do' />"><img src="../img/haedal.jpg" alt=""></a>
+						<a href="<c:url value='/booking/view.do' />?location=장소명3"><img src="../img/haedal.jpg" alt=""></a>
 					</div>
 					<div class="info">
-						<a href="<c:url value='/booking/view.do' />"><h3>장소명</h3></a>
+						<a href="<c:url value='/booking/view.do' />?location=장소명3"><h3>장소명3</h3></a>
 						<p>장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명 장소 설명</p>
 						<span>2021-05-03</span>
 					</div>

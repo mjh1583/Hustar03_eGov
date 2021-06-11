@@ -89,10 +89,10 @@ public class NoticeController {
 		MemberVO loginVO = (MemberVO)session.getAttribute("login");
 		
 		// 로그인이 되어 있지 않다면 로그인 페이지로 이동
-		if(loginVO == null) {
-			redirectAttributes.addFlashAttribute("msg", "로그인이 필요합니다.");
-			return "redirect:/member/login.do";
-		}
+		/*
+		 * if(loginVO == null) { redirectAttributes.addFlashAttribute("msg",
+		 * "로그인이 필요합니다."); return "redirect:/member/login.do"; }
+		 */
 		
 		// 작성자 = 로그인 한 사람의 이름
 		noticeVO.setWriter(loginVO.getName());
@@ -141,6 +141,7 @@ public class NoticeController {
 		
 	}
 	
+	// 파일 삭제
 	@RequestMapping("/bbs/notice_deleteFile.do")
 	public ModelAndView notice_deleteFile(NoticeVO searchVO,
 			Model model) throws Exception {

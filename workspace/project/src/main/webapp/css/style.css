@@ -391,10 +391,12 @@ img {max-width:100%; height:auto; width: auto\9;}
 .mypage-box ul li div {display: inline-block;}
 
 .mypage-box ul li div.no {width: 5%;}
-.mypage-box ul li div.subject {width: 40%; font-weight: bold;}
+.mypage-box ul li div.subject {width: 22%; font-weight: bold;}
+.mypage-box ul li div.bookingDate {width: 15%; font-weight: bold;}
 .mypage-box ul li div.state {width: 15%; font-weight: bold;}
-.mypage-box ul li div.date {width: 20%;}
-.mypage-box ul li div.name {width: 15%;}
+.mypage-box ul li div.date {width: 15%;}
+.mypage-box ul li div.name {width: 10%;}
+.mypage-box ul li div.adminMenu {width: 15%;}
 
 .mypage-box ul li div.state span.wait {color: blue;}
 .mypage-box ul li div.state span.deny {color: #000;}

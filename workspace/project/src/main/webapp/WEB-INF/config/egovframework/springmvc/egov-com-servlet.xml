@@ -39,6 +39,26 @@
 		    <bean class="egovframework.com.cmm.interceptor.AuthenticInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+        	<!-- 예약에 해당하는 페이지는 모두 로그인 체크 -->
+            <mvc:mapping path="/booking/*.do"/>
+            <mvc:mapping path="/bbs/notice_*.do"/>
+            <mvc:mapping path="/bbs/gallery_*.do"/>
+            
+            <!-- 해당 페이지는 로그인 체크에서 제외 -->
+            <mvc:exclude-mapping path="/booking/list.do"/>
+            <mvc:exclude-mapping path="/booking/view.do"/>
+            <mvc:exclude-mapping path="/bbs/notice_list.do"/>
+            <mvc:exclude-mapping path="/bbs/notice_view.do"/>
+            <mvc:exclude-mapping path="/bbs/gallery_list.do"/>
+            <mvc:exclude-mapping path="/bbs/gallery_view.do"/>
+            <mvc:exclude-mapping path="/bbs/gallery_image.do"/>
+            
+		    <bean class="egovframework.com.cmm.interceptor.MyAuthenticInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!-- Annotation 을 사용하지 않는 경우에 대한 MVC 처리 설정 -->
     <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>

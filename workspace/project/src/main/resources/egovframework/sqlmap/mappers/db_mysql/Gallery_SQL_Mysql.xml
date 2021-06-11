@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="galleryDAO"> 
+	<!-- 갤러리 목록 -->
+	<select id="galleryDAO.selectGalleryList" parameterType="galleryVO" resultType="galleryVO">
+		<![CDATA[
+			SELECT * FROM gallery 
+		]]>
+	</select>
+	<!-- //갤러리 목록 -->
+	
+	<!-- 갤러리 목록 개수 -->
+	<select id="galleryDAO.selectGalleryListCnt" parameterType="galleryVO" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM gallery
+				WHERE subject LIKE CONCAT('%', #{searchKeyword}, '%')
+				OR writer LIKE CONCAT('%', #{searchKeyword}, '%')
+		]]>
+	</select>
+	<!-- //갤러리 목록 개수 -->
+	
+	<!-- 갤러리 상세 -->
+	<select id="galleryDAO.selectGalleryView" parameterType="galleryVO" resultType="galleryVO">
+		<![CDATA[
+			SELECT * FROM gallery 
+				WHERE seq = #{seq}
+		]]>
+	</select>
+	<!-- //갤러리 상세 -->
+	
+	<!-- 갤러리 입력 -->
+	<insert id="galleryDAO.insertGallery" parameterType="galleryVO">
+		<![CDATA[
+			INSERT INTO gallery
+			(subject, writer, date, contents, filename, oriFilename) 
+			VALUES (#{subject}, #{writer}, NOW(), #{contents}, #{filename}, #{oriFilename})
+		]]>
+	</insert>
+	<!-- 갤러리 입력 -->
+	
+	<!-- 갤러리 삭제 -->
+	<delete id="galleryDAO.deleteGallery" parameterType="galleryVO">
+		<![CDATA[
+			DELETE FROM gallery WHERE seq = #{seq}
+		]]>
+	</delete>
+	<!-- 갤러리 삭제 -->
+	
+	<!-- 갤러리 수정 -->
+	<update id="galleryDAO.updateGallery" parameterType="galleryVO">
+		UPDATE gallery
+		<!-- 시작할때는 Set을 넣어주고 끝날때는 ,를 없애줌 -->
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="subject != null"><![CDATA[ subject = #{subject}, ]]></if> 
+			<if test="contents != null"><![CDATA[ contents = #{contents}, ]]></if> 
+			<if test="filename != null"><![CDATA[ filename = #{filename}, ]]></if> 
+			<if test="oriFilename != null"><![CDATA[ oriFilename = #{oriFilename}, ]]></if> 
+		</trim>
+	</update>
+	<!-- //갤러리 수정 -->
+</mapper>

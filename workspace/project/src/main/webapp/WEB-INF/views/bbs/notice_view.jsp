@@ -16,11 +16,13 @@
 			<div class="view-content">
 				<pre><c:out value="${notice.contents}" /></pre>
 			</div>
-
-			<div class="view-file">
-				<a href="<c:url value='/bbs/notice_downloadFile.do' />?seq=${notice.seq}"><i class="fa fa-download" aria-hidden="true"></i>${notice.oriFilename}</a>
-				<!-- <a href="#none"><i class="fa fa-download" aria-hidden="true"></i> 첨부파일 다운로드.jpg</a> -->
-			</div>
+			
+			<c:if test="${not empty notice.oriFilename}">
+				<div class="view-file">
+					<a href="<c:url value='/bbs/notice_downloadFile.do' />?seq=${notice.seq}"><i class="fa fa-download" aria-hidden="true"></i>  ${notice.oriFilename}</a>
+					<!-- <a href="#none"><i class="fa fa-download" aria-hidden="true"></i> 첨부파일 다운로드.jpg</a> -->
+				</div>
+			</c:if>
 		</div> <!-- view -->
 	</div> <!-- notice-box -->
 	

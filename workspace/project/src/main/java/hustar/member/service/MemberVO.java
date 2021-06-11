@@ -11,7 +11,16 @@ public class MemberVO extends ComDefaultVO {
 	private String gender;
 	private String job;
 	private String address;
+	private String auth;
 	
+	public String getAuth() {
+		return auth;
+	}
+
+	public void setAuth(String auth) {
+		this.auth = auth;
+	}
+
 	public String getId() {
 		return id;
 	}
